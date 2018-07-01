@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Description</th>
+      <th scope="col">Days Left</th>
+      <th scope="col">Complete</th>
+    </tr>
+  </thead>
+  <% @user.items.each do |i| %>
+    <tbody>
+        <td><%= "#{i.name}" %></td>
+        <td>Time Left</td>
+        <td>Yes or no</td>
+    </tbody>
+  <% end %>
+</table>
