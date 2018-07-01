@@ -48,6 +48,9 @@ gem 'thor', '0.20.0'
 # Figaro
 gem 'figaro', '1.0'
 
+# Faker for seeding data
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
 group :development do
   gem 'listen', '~> 3.0.5'
 end
