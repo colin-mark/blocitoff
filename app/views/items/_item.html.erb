@@ -3,14 +3,20 @@
     <tr>
       <th scope="col">Description</th>
       <th scope="col">Days Left</th>
-      <th scope="col">Complete</th>
+      <% if @user == current_user %>
+        <th scope="col">Complete</th>
+      <% end %>
     </tr>
   </thead>
   <% @user.items.each do |i| %>
     <tbody>
         <td><%= "#{i.name}" %></td>
-        <td>Time Left</td>
-        <td><%= link_to "Complete", [@user, i], remote: true, method: :delete, class: 'glyphicon glyphicon-ok' %></td>
+        <td>
+          <%= from_time(i) %>
+        </td>
+        <% if @user == current_user %>
+          <td><%= link_to "Complete", [@user, i], remote: true, method: :delete, class: 'glyphicon glyphicon-ok' %></td>
+        <% end %>
     </tbody>
   <% end %>
 </table>

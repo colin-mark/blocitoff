@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     if params[:id].nil?
       @user = current_user
     else
-      @user = User.find params[:id]
+      @user = User.find(params[:id])
     end
 
     @item = Item.create
