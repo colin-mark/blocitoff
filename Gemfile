@@ -51,6 +51,9 @@ gem 'figaro', '1.0'
 # Faker for seeding data
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
+# Whenever for automating tasks
+gem 'whenever', require: false
+
 group :development do
   gem 'listen', '~> 3.0.5'
 end
