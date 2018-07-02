@@ -8,9 +8,20 @@ class ItemsController < ApplicationController
     @item.user = current_user
 
     if @item.save
-      redirect_to root_path, notice: "Item was saved successfully."
+      redirect_to root_path, notice: "You need to #{@item.name}"
     else
       flash.now[:alert] = "Error creating item. Please try again."
+      render @user
+    end
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+
+    if @item.destroy
+      redirect_to root_path, notice: "#{@item.name} completed."
+    else
+      flash.now[:alert] = "Error completing item. Please try again."
       render @user
     end
   end
